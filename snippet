@@ -1,7 +1,7 @@
 {
-	"meetup_skeleton": {
+	"contract_skeleton": {
 		"scope": "solidity",
-		"prefix": "meetup_skeleton",
+		"prefix": "contract_skeleton",
 		"body": [
 			"pragma solidity ^0.4.17;",
 			"",
@@ -11,9 +11,9 @@
 		],
 		"description": "Creates the main contract layout"
 	},
-	"meetup_struct": {
+	"contract_Entry": {
 		"scope": "solidity",
-		"prefix": "meetup_struct",
+		"prefix": "contract_Entry",
 		"body": [
 			"  struct Entry {",
 			"    string key;",
@@ -24,17 +24,17 @@
 		],
 		"description": ""
 	},
-	"meetup_map": {
+	"contract_addressToEntryMapping": {
 		"scope": "solidity",
-		"prefix": "meetup_map",
+		"prefix": "contract_addressToEntryMapping",
 		"body": [
 			"  mapping (address => Entry) private addressToEntryMapping; "
 		],
 		"description": ""
 	},
-	"meetup_put": {
+	"contract_createEntry": {
 		"scope": "solidity",
-		"prefix": "meetup_put",
+		"prefix": "contract_createEntry",
 		"body": [
 			"  function createEntry (string _key, string _value)",
 			"  public",
@@ -49,9 +49,9 @@
 		],
 		"description": " Create the function to add new entries"
 	},
-	"meetup_get": {
+	"contract_fetchEntry": {
 		"scope": "solidity",
-		"prefix": "meetup_get",
+		"prefix": "contract_fetchEntry",
 		"body": [
 			"  function fetchEntry ()",
 			"  public",
@@ -65,6 +65,25 @@
 			"      addressToEntryMapping[msg.sender].linkToPreviousBlock",
 			"    );",
 			"  }",
+		],
+		"description": "Create the function to get entries"
+	},
+	"test_skeleton": {
+		"scope": "javascript",
+		"prefix": "test_skeleton",
+		"body": [
+			"const $1 = artifacts.require('$1');",
+			"contract('Test Name', async (accounts) => {",
+		  "",
+		  "  function assertEventOfType (response, eventName, index) {",
+		  "    assert.equal(response.logs[index].event, eventName, eventName + ' event should fire.');",
+		  "  }",
+		  "",
+		  "  it('should ...', async () => {",
+		  "    let instance = await $1.deployed();",
+		  "    await instance.$2($3, { from: accounts[0] });",
+		  "  })",
+		  "})",
 		],
 		"description": "Create the function to get entries"
 	}
