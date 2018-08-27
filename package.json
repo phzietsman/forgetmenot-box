@@ -1,0 +1,25 @@
+{
+  "name": "forgetmenot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phzietsman/forgetmenot.git"
+  },
+  "author": "Paul Zietsman <phzietsman@gmail.com> (https://github.com/phzietsman)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phzietsman/forgetmenot/issues"
+  },
+  "homepage": "https://github.com/phzietsman/forgetmenot#readme",
+  "dependencies": {
+    "lite-server": "2.3.0"
+  }
+}

@@ -1,0 +1,71 @@
+{
+	"meetup_skeleton": {
+		"scope": "solidity",
+		"prefix": "meetup_skeleton",
+		"body": [
+			"pragma solidity ^0.4.17;",
+			"",
+			"contract Forgetmenot {",
+			"$1",
+			"}"
+		],
+		"description": "Creates the main contract layout"
+	},
+	"meetup_struct": {
+		"scope": "solidity",
+		"prefix": "meetup_struct",
+		"body": [
+			"  struct Entry {",
+			"    string key;",
+			"    string value;",
+			"    uint createdBlock;",
+			"    uint linkToPreviousBlock;",
+			"  }"
+		],
+		"description": ""
+	},
+	"meetup_map": {
+		"scope": "solidity",
+		"prefix": "meetup_map",
+		"body": [
+			"  mapping (address => Entry) private addressToEntryMapping; "
+		],
+		"description": ""
+	},
+	"meetup_put": {
+		"scope": "solidity",
+		"prefix": "meetup_put",
+		"body": [
+			"  function createEntry (string _key, string _value)",
+			"  public",
+			"  {",
+			"    Entry storage entry = addressToEntryMapping[msg.sender];",
+			"    entry.linkToPreviousBlock = entry.createdBlock;",
+			"    entry.createdBlock = block.number;",
+			"",
+			"    entry.key = _key;",
+			"    entry.value = _value;",
+			"  }",
+		],
+		"description": " Create the function to add new entries"
+	},
+	"meetup_get": {
+		"scope": "solidity",
+		"prefix": "meetup_get",
+		"body": [
+			"  function fetchEntry ()",
+			"  public",
+			"  view",
+			"  returns (string, string, uint, uint)",
+			"  {",
+			"    return (",
+			"      addressToEntryMapping[msg.sender].key,",
+			"      addressToEntryMapping[msg.sender].value,",
+			"      addressToEntryMapping[msg.sender].createdBlock,",
+			"      addressToEntryMapping[msg.sender].linkToPreviousBlock",
+			"    );",
+			"  }",
+		],
+		"description": "Create the function to get entries"
+	}
+}
